@@ -50,7 +50,19 @@ public class EmailTest {
 		assertEquals(1, email.getBccAddresses().size());
 	}
 	
+	@Test
+	public void testaddCc() throws Exception{
+		
+		email.addCc(TEST_Emails);
+		assertEquals(4, email.getCcAddresses().size());
+	}
 	
+	@Test(expected = EmailException.class)
+	public void testaddCcEmpty() throws Exception{
+		
+		email.addCc(Empty_Email);
+		assertEquals(1, email.getCcAddresses().size());
+	}
 
 
 }
