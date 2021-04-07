@@ -108,4 +108,16 @@ public class EmailTest {
 		
 	}
 	
+
+	@Test
+	public void testgetMailSession() throws Exception
+	{
+	    Properties properties = new Properties(System.getProperties());
+	    properties.setProperty(EmailConstants.MAIL_TRANSPORT_PROTOCOL, EmailConstants.SMTP);
+	       
+		Session mySession = Session.getInstance(properties, null);
+        email.setMailSession(mySession);
+        assertEquals(mySession, this.email.getMailSession());
+	}
+	
 }
