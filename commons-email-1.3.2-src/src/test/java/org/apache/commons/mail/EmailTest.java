@@ -120,4 +120,17 @@ public class EmailTest {
         assertEquals(mySession, this.email.getMailSession());
 	}
 	
+
+	@Test
+	public void testgetSentDate() throws Exception
+	{
+		// test null date
+		assertEquals(new Date().getTime(), email.getSentDate().getTime());
+		
+		 // with input date
+        dateTest = Calendar.getInstance().getTime();
+        email.setSentDate(dateTest);
+        assertEquals(dateTest, email.getSentDate());
+    }
+	
 }
