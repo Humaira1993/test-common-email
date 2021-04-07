@@ -139,4 +139,13 @@ public class EmailTest {
 		email.setSocketConnectionTimeout(60);
 		assertEquals(50, email.getSocketConnectionTimeout());
 	}
+	
+
+	@Test 
+	public void testsetFrom() throws Exception
+	{
+		email.setFrom(TEST_Emails[0]);
+		assertEquals(TEST_Emails[1], email.getFromAddress());
+	}
+	
 }
