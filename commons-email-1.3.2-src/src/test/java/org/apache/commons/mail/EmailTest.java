@@ -82,7 +82,12 @@ public class EmailTest {
 		email.addHeader(name, value);
 		assertEquals(1, email.headers.size());
 	}
-	
+	@Test
+	public void testaddReplyTo() throws Exception{
+		
+		email.addReplyTo(TEST_Emails[0], value);
+		assertEquals(2, email.getReplyToAddresses().size());
+	}
 
 
 }
