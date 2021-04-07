@@ -63,6 +63,26 @@ public class EmailTest {
 		email.addCc(Empty_Email);
 		assertEquals(1, email.getCcAddresses().size());
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testaddHeaderEmptyName() throws Exception{
+		
+		email.addHeader(Emp, value);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testaddHeaderEmptyValue() throws Exception{
+		
+		email.addHeader(name, Emp);
+	}
+	
+	@Test
+	public void testaddHeader() throws Exception{
+		
+		email.addHeader(name, value);
+		assertEquals(1, email.headers.size());
+	}
+	
 
 
 }
