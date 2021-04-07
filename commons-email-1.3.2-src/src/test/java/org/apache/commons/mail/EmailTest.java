@@ -89,5 +89,10 @@ public class EmailTest {
 		assertEquals(2, email.getReplyToAddresses().size());
 	}
 
-
+	@Test(expected = IllegalStateException.class)
+	public void testBuildMimeMessage() throws Exception
+	{   
+	    
+	    email.buildMimeMessage();
+	}
 }
