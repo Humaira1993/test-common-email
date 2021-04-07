@@ -95,4 +95,17 @@ public class EmailTest {
 	    
 	    email.buildMimeMessage();
 	}
+	
+	@Test
+	public void testgetHostName() throws Exception
+	{
+		// check for null
+		assertEquals(null, email.getHostName());
+		
+		//check host name
+		email.setHostName("host");
+		assertEquals("host", email.getHostName());
+		
+	}
+	
 }
